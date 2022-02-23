@@ -2,6 +2,7 @@ package com.example.english;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -25,14 +26,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                Intent i = new Intent(MainActivity.this, ActivityTwo.class);
+
+                startActivity(i);
 
             }
+
+
         });
 
         ButtonHa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                Intent i = new Intent(MainActivity.this, ActivityTwo.class);
+
+                startActivity(i);
 
             }
         });
