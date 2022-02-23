@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent i = new Intent(MainActivity.this, ActivityTwo.class);
-
+                i.putExtra("complexity", 0);
                 startActivity(i);
 
             }
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent i = new Intent(MainActivity.this, ActivityTwo.class);
-
+                i.putExtra("complexity", 1);
                 startActivity(i);
 
             }

@@ -10,9 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.English">
         <activity
+            android:name=".Result"
+            android:exported="false" />
+        <activity
             android:name=".ActivityTwo"
             android:exported="false"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
