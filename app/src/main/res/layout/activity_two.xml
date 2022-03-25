@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@drawable/background"
+
     >
 
 
@@ -60,6 +61,15 @@
         app:layout_constraintTop_toBottomOf="@+id/button2"
         android:textSize="20sp"/>
 
+    <ImageView
+        android:id="@+id/IMG"
+        android:layout_width="357dp"
+        android:layout_height="245dp"
+        app:layout_constraintBottom_toTopOf="@+id/txt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

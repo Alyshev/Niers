@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,18 +23,21 @@ public class ActivityTwo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two);
 
+
+
+
         complexity = getIntent().getIntExtra("complexity", -1);
 
         String [][][] arr =
-                        {{{"1праворпаво паовропавр рпаворполавпа рпоав","11","12","13","1"},
-                        {"1праворпаво паовропавр рпаворполавпа рпоав","14","15","16","2"},
-                        {"1праворпаво паовропавр рпаворполавпа рпоав","17","18","19","3"}},
+                        {{{"1праворпаво паовропавр рпаворполавпа рпоав","11","12","13","1","img2"},
+                        {"1праворпаво паовропавр рпаворполавпа рпоав","14","15","16","2","img1"},
+                        {"1праворпаво паовропавр рпаворполавпа рпоав","17","18","19","3","img2"}},
 
 
-                        {{"2праворпаво паовропавр рпаворполавпа рпоав","21","22","23","1"},
-                        {"2праворпаво паовропавр рпаворполавпа рпоав","24","25","26","2"},
-                        {"2праворпаво паовропавр рпаворполавпа рпоав","24","25","26","2"},
-                        {"2праворпаво паовропавр рпаворполавпа рпоав","27","28","29","3"}}};
+                        {{"2праворпаво паовропавр рпаворполавпа рпоав","21","22","23","1","img2"},
+                        {"2праворпаво паовропавр рпаворполавпа рпоав","24","25","26","2","img1"},
+                        {"2праворпаво паовропавр рпаворполавпа рпоав","24","25","26","2","img2"},
+                        {"2праворпаво паовропавр рпаворполавпа рпоав","27","28","29","3","img1"}}};
                             //{вопрос,ответ1,ответ2,ответ3,номер верного ответа}
 
 
@@ -44,11 +48,19 @@ public class ActivityTwo extends AppCompatActivity {
         Button Button2 = findViewById(R.id.button2);
         Button Button3 = findViewById(R.id.button3);
         TextView Txt = findViewById(R.id.txt);
+        ImageView Img = findViewById(R.id.IMG);
 
         Button1.setText(String.format(getString(R.string.text), arr[complexity][i][1]));
         Button2.setText(String.format(getString(R.string.text), arr[complexity][i][2]));
         Button3.setText(String.format(getString(R.string.text), arr[complexity][i][3]));
         Txt.setText(String.format(getString(R.string.text), arr[complexity][i][0]));
+
+        Resources res = getResources();
+        String mDrawableName = arr[complexity][i][5];
+        int resID = res.getIdentifier(mDrawableName , "drawable", getPackageName());
+        Drawable drawable = res.getDrawable(resID );
+        Img.setImageDrawable(drawable );
+        Img.destroyDrawingCache();
 
         Button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,12 +70,22 @@ public class ActivityTwo extends AppCompatActivity {
                 }
 
                 i++;
+
+
+
                 if (i < arr[complexity].length) {
                     Button1.setText(String.format(getString(R.string.text), arr[complexity][i][1]));
                     Button2.setText(String.format(getString(R.string.text), arr[complexity][i][2]));
                     Button3.setText(String.format(getString(R.string.text), arr[complexity][i][3]));
                     Txt.setText(String.format(getString(R.string.text), arr[complexity][i][0]));
 
+
+                    Resources res = getResources();
+                    String mDrawableName = arr[complexity][i][5];
+                    int resID = res.getIdentifier(mDrawableName , "drawable", getPackageName());
+                    Drawable drawable = res.getDrawable(resID );
+                    Img.setImageDrawable(drawable );
+                    Img.destroyDrawingCache();
 
                 }
                 else {
@@ -96,6 +118,13 @@ public class ActivityTwo extends AppCompatActivity {
                     Txt.setText(String.format(getString(R.string.text), arr[complexity][i][0]));
 
 
+                    Resources res = getResources();
+                    String mDrawableName = arr[complexity][i][5];
+                    int resID = res.getIdentifier(mDrawableName , "drawable", getPackageName());
+                    Drawable drawable = res.getDrawable(resID );
+                    Img.setImageDrawable(drawable );
+                    Img.destroyDrawingCache();
+
                 }
                 else {
 
@@ -124,6 +153,13 @@ public class ActivityTwo extends AppCompatActivity {
                     Button3.setText(String.format(getString(R.string.text), arr[complexity][i][3]));
                     Txt.setText(String.format(getString(R.string.text), arr[complexity][i][0]));
 
+
+                    Resources res = getResources();
+                    String mDrawableName = arr[complexity][i][5];
+                    int resID = res.getIdentifier(mDrawableName , "drawable", getPackageName());
+                    Drawable drawable = res.getDrawable(resID );
+                    Img.setImageDrawable(drawable );
+                    Img.destroyDrawingCache();
 
                 }
                 else {

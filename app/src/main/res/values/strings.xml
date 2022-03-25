@@ -2,5 +2,4 @@
     <string name="app_name">English</string>
     <string name="text">%1$s</string>
     <string name="strResult">Вы набрали %1$s очков из %2$s </string>
-
 </resources>
